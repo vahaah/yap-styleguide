@@ -1,5 +1,5 @@
 [tool.poetry]
-authors = ["Alex <mail@claudiojolowicz.com>"]
+authors = ["Alex Vakhitov <alexius@hey.com>"]
 description = "Yet another python styleguide"
 documentation = "https://yap-styleguide.readthedocs.io"
 homepage = "https://github.com/vahaah/yap-styleguide"
@@ -8,7 +8,7 @@ license = "MIT"
 name = "yap-styleguide"
 readme = "README.md"
 repository = "https://github.com/vahaah/yap-styleguide"
-version = "0.0.1"
+version = "0.0.2"
 
 [tool.poetry.dependencies]
 bandit = "^1.7.0"
@@ -29,6 +29,7 @@ python = "^3.7"
 codecov = "^2.0.22"
 coverage = {extras = ["toml"], version = "^5.0.1"}
 mypy = "^0.761"
+nox = "^2020.12.31"
 pytest = "^5.3.2"
 pytest-cov = "^2.8.1"
 pytest-mock = "^2.0.0"
@@ -38,7 +39,6 @@ sphinx = "^2.3.1"
 sphinx-autodoc-typehints = "^1.10.3"
 typeguard = "^2.7.1"
 xdoctest = "^0.11.0"
-nox = "^2020.12.31"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
