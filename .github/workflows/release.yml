@@ -1,0 +1,25 @@
+name: Release
+on:
+  release:
+    types: [published]
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+        with:
+          python-version: "3.8"
+          architecture: x64
+      - run: >-
+          pip install --constraint=.github/workflows/constraints.txt pip
+          pip --version
+      - run: >-
+          pip install --constraint=.github/workflows/constraints.txt poetry
+          poetry --version
+      - run: >-
+          pip install --constraint=.github/workflows/constraints.txt nox
+          nox --version
+      - run: nox
+      - run: poetry build
+      - run: poetry publish --username=__token__ --password=${{ secrets.PYPI_TOKEN }}
